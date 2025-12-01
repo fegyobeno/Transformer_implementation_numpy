@@ -5,15 +5,15 @@ from transformer import Transformer # Ensure this imports your class
 
 # --- 1. Configuration (MUST MATCH TRAINING) ---
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-CHECKPOINT_PATH = "TRAIN_1/transformer_epoch_4.pth" # Or whichever epoch you want to test
+CHECKPOINT_PATH = "TRAIN_1/transformer_epoch_91.pth" # Or whichever epoch you want to test
 TOKENIZER_PATH = "tokenizer.json"
 
 # Architecture Specs (Update these if you used the 2060 Optimized configs)
-D_MODEL = 256  
-N_LAYERS = 3
+D_MODEL = 512  # Reduced from 512 for faster training on smaller data
 HEADS = 8
-D_FF = 512
-DROPOUT = 0.0 # Dropout is ignored in eval, but good to keep structure consistent
+N_LAYERS = 6   # Reduced from 6
+D_FF = 1024
+DROPOUT = 0.1
 
 def predict(model, sentence, tokenizer, device, max_length=50):
     model.eval()

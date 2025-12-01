@@ -3,7 +3,7 @@ from tokenizers.models import BPE
 from tokenizers.trainers import BpeTrainer
 from tokenizers.pre_tokenizers import Whitespace
 
-def train_tokenizer(files, save_path="tokenizer.json", vocab_size=30000):
+def train_tokenizer(files, save_path="tokenizer.json", vocab_size=700):
     print("--- Training BPE Tokenizer ---")
     
     # 1. Initialize an empty BPE Tokenizer

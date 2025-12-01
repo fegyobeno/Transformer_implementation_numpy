@@ -12,7 +12,7 @@ def train_model():
     # ----------------------------------
     DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     BATCH_SIZE = 512
-    EPOCHS = 4
+    EPOCHS = 100
     LEARNING_RATE = 0.0001
     MAX_LEN = 64
     
